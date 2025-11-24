@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* VIBRANT GRADIENT: From deep purple to bright blue */
+    background: linear-gradient(135deg, #4c007a, #007bff);
+    color: #e5e7eb;
+}
+
+.app {
+    background: rgba(30, 41, 59, 0.95);
+    padding: 20px;
+    border-radius: 16px;
+    width: 606px;
+    height: 684px;
+    max-width: 90vw;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    /* Reduced margin */
+    font-size: 22px;
+    /* Reduced size */
+    color: #ffffff;
+}
+
+.search-box {
+    display: flex;
+    gap: 6px;
+    /* Reduced gap */
+    margin-bottom: 12px;
+    /* Reduced margin */
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px 14px;
+    /* Reduced padding */
+    border-radius: 20px;
+    /* More compact radius */
+    border: 1px solid #4b5563;
+    background: #1f2937;
+    color: #e5e7eb;
+    transition: border-color 0.3s;
+}
+
+.search-box input::placeholder {
+    color: #9ca3af;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+.search-box button {
+    padding: 10px 16px;
+    /* Reduced padding */
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: #3b82f6;
+    color: #ffffff;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.search-box button:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.error {
+    min-height: 18px;
+    /* Slightly smaller height */
+    color: #f87171;
+    font-size: 13px;
+    /* Reduced font size */
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.weather-card {
+    margin-top: 10px;
+    /* Reduced margin */
+    padding-top: 10px;
+    /* Reduced padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#city-name {
+    font-size: 20px;
+    /* Reduced font size */
+    font-weight: 700;
+    text-align: center;
+}
+
+#date-time {
+    font-size: 12px;
+    /* Reduced font size */
+    color: #a1a1aa;
+    margin-top: 2px;
+    text-align: center;
+}
+
+.main-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 15px;
+    /* Reduced margin */
+}
+
+.temp {
+    display: flex;
+    align-items: flex-start;
+    font-size: 48px;
+    /* Reduced temperature size */
+    font-weight: 800;
+    color: #38bdf8;
+}
+
+.unit {
+    font-size: 20px;
+    /* Reduced unit size */
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.desc img {
+    width: 64px;
+    /* Reduced icon size from 80px */
+    height: 64px;
+}
+
+#description {
+    text-transform: capitalize;
+    font-size: 16px;
+    /* Reduced font size */
+    font-weight: 500;
+    margin-top: -8px;
+}
+
+/* --- HORIZONTAL DETAILS LAYOUT --- */
+.details {
+    margin-top: 28px;
+    padding-top: 10px;
+    border-top: 1px solid #334155;
+    font-size: 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    /* align-content: space-around; */
+    align-items: center;
+}
+
+.details p {
+    /* Each detail item takes roughly half the width */
+    width: calc(50% - 4px);
+}
+
+
+/* --- RESPONSIVENESS (Media Query) --- */
+@media (max-width: 480px) {
+    .app {
+        padding: 15px;
+        /* Further reduction on mobile */
+        margin: 8px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input,
+    .search-box button {
+        border-radius: 10px;
+    }
+
+    .main-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .temp {
+        font-size: 40px;
+        /* Smaller temp on mobile */
+    }
+
+    /* On small screens, force details to stack */
+    .details p {
+        width: 100%;
+    }
+}
